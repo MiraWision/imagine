@@ -1,0 +1,109 @@
+{
+  "name": "@mirawision/imagine",
+  "version": "1.0.0",
+  "description": "Deterministic random data generator for mocks, seeds, demos, and tests.",
+  "keywords": [
+    "faker",
+    "random",
+    "seed",
+    "deterministic",
+    "mock",
+    "testing",
+    "typescript",
+    "esm",
+    "svg",
+    "data",
+    "generator"
+  ],
+  "license": "MIT",
+  "author": "Yelysei Lukin <yelysei277@gmail.com>",
+  "type": "module",
+  "sideEffects": false,
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "default": "./index.js"
+    },
+    "./location": {
+      "types": "./location.d.ts",
+      "default": "./location.js"
+    },
+    "./number": {
+      "types": "./number.d.ts",
+      "default": "./number.js"
+    },
+    "./boolean": {
+      "types": "./boolean.d.ts",
+      "default": "./boolean.js"
+    },
+    "./id": {
+      "types": "./id.d.ts",
+      "default": "./id.js"
+    },
+    "./string": {
+      "types": "./string.d.ts",
+      "default": "./string.js"
+    },
+    "./util": {
+      "types": "./util.d.ts",
+      "default": "./util.js"
+    },
+    "./images": {
+      "types": "./images.d.ts",
+      "default": "./images.js"
+    },
+    "./person": {
+      "types": "./person.d.ts",
+      "default": "./person.js"
+    },
+    "./date": {
+      "types": "./date.d.ts",
+      "default": "./date.js"
+    },
+    "./internet": {
+      "types": "./internet.d.ts",
+      "default": "./internet.js"
+    },
+    "./color": {
+      "types": "./color.d.ts",
+      "default": "./color.js"
+    },
+    "./game": {
+      "types": "./game.d.ts",
+      "default": "./game.js"
+    }
+  },
+  "scripts": {
+    "clean": "rimraf index.* number.js number.d.ts boolean.js boolean.d.ts id.js id.d.ts string.js string.d.ts util.js util.d.ts images.js images.d.ts location.js location.d.ts person.js person.d.ts date.js date.d.ts internet.js internet.d.ts color.js color.d.ts game.js game.d.ts build",
+    "build": "npm run clean && tsc && mv build/index.js index.js && mv build/index.d.ts index.d.ts && mv build/number/index.js number.js && mv build/number/index.d.ts number.d.ts && mv build/boolean/index.js boolean.js && mv build/boolean/index.d.ts boolean.d.ts && mv build/id/index.js id.js && mv build/id/index.d.ts id.d.ts && mv build/string/index.js string.js && mv build/string/index.d.ts string.d.ts && mv build/util/index.js util.js && mv build/util/index.d.ts util.d.ts && mv build/images/index.js images.js && mv build/images/index.d.ts images.d.ts && mv build/location/index.js location.js && mv build/location/index.d.ts location.d.ts && mv build/person/index.js person.js && mv build/person/index.d.ts person.d.ts && mv build/date/index.js date.js && mv build/date/index.d.ts date.d.ts && mv build/internet/index.js internet.js && mv build/internet/index.d.ts internet.d.ts && mv build/color/index.js color.js && mv build/color/index.d.ts color.d.ts && mv build/game/index.js game.js && mv build/game/index.d.ts game.d.ts && rimraf build",
+    "lint": "eslint \"src/**/*.ts\"",
+    "test": "jest --runInBand",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MiraWision/imagine"
+  },
+  "bugs": {
+    "url": "https://github.com/MiraWision/imagine/issues"
+  },
+  "homepage": "https://github.com/MiraWision/imagine#readme",
+  "devDependencies": {
+    "@types/jest": "29.5.12",
+    "@types/node": "20.11.30",
+    "eslint": "8.57.0",
+    "eslint-config-prettier": "9.1.0",
+    "jest": "29.7.0",
+    "prettier": "3.3.1",
+    "rimraf": "5.0.5",
+    "ts-jest": "29.1.2",
+    "typescript": "5.4.5"
+  },
+  "peerDependencies": {
+    "@mirawision/infopedia": ">=1.0.0"
+  }
+}
+
