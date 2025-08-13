@@ -1,15 +1,7 @@
+import { months, weekdays } from '@mirawision/infopedia/datetime';
+
 import { rngFrom } from '../core/prng.js';
 import { getGlobalRng } from '../core/seed.js';
-// Import JSON datasets directly to avoid bringing external TS sources into DTS build
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-import monthsData from '../../../infopedia/src/data/months.json';
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-import weekdaysData from '../../../infopedia/src/data/weekdays.json';
-
-const months = monthsData as ReadonlyArray<{ index: number; name: string; short: string }>;
-const weekdays = weekdaysData as ReadonlyArray<{ index: number; name: string; short: string }>;
 
 type DateFormat = 'iso'|'unix'|'utc'|'local'|string;
 

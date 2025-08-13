@@ -1,6 +1,6 @@
 {
   "name": "@mirawision/imagine",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Deterministic random data generator for mocks, seeds, demos, and tests.",
   "keywords": [
     "faker",
@@ -18,8 +18,8 @@
   "license": "MIT",
   "author": "Yelysei Lukin <yelysei277@gmail.com>",
   "scripts": {
-    "clean": "rimraf index.* number.js number.d.ts boolean.js boolean.d.ts id.js id.d.ts string.js string.d.ts util.js util.d.ts images.js images.d.ts location.js location.d.ts person.js person.d.ts date.js date.d.ts internet.js internet.d.ts color.js color.d.ts game.js game.d.ts core build",
-    "build": "npm run clean && tsc && mv build/index.js index.js && mv build/index.d.ts index.d.ts && mv build/number/index.js number.js && mv build/number/index.d.ts number.d.ts && mv build/boolean/index.js boolean.js && mv build/boolean/index.d.ts boolean.d.ts && mv build/id/index.js id.js && mv build/id/index.d.ts id.d.ts && mv build/string/index.js string.js && mv build/string/index.d.ts string.d.ts && mv build/util/index.js util.js && mv build/util/index.d.ts util.d.ts && mv build/images/index.js images.js && mv build/images/index.d.ts images.d.ts && mv build/location/index.js location.js && mv build/location/index.d.ts location.d.ts && mv build/person/index.js person.js && mv build/person/index.d.ts person.d.ts && mv build/date/index.js date.js && mv build/date/index.d.ts date.d.ts && mv build/internet/index.js internet.js && mv build/internet/index.d.ts internet.d.ts && mv build/color/index.js color.js && mv build/color/index.d.ts color.d.ts && mv build/game/index.js game.js && mv build/game/index.d.ts game.d.ts && mv build/core core && rimraf build",
+    "clean": "rimraf index.* number boolean id string util images location person date internet color game core build",
+    "build": "npm run clean && tsc && mv build/index.js index.js && mv build/index.d.ts index.d.ts && mv build/number number && mv build/boolean boolean && mv build/id id && mv build/string string && mv build/util util && mv build/images images && mv build/location location && mv build/person person && mv build/date date && mv build/internet internet && mv build/color color && mv build/game game && mv build/core core && rimraf build",
     "lint": "eslint \"src/**/*.ts\"",
     "test": "jest --runInBand",
     "prepare": "npm run build",
@@ -37,52 +37,52 @@
       "default": "./index.js"
     },
     "./location": {
-      "types": "./location.d.ts",
-      "default": "./location.js"
+      "types": "./location/index.d.ts",
+      "default": "./location/index.js"
     },
     "./number": {
-      "types": "./number.d.ts",
-      "default": "./number.js"
+      "types": "./number/index.d.ts",
+      "default": "./number/index.js"
     },
     "./boolean": {
-      "types": "./boolean.d.ts",
-      "default": "./boolean.js"
+      "types": "./boolean/index.d.ts",
+      "default": "./boolean/index.js"
     },
     "./id": {
-      "types": "./id.d.ts",
-      "default": "./id.js"
+      "types": "./id/index.d.ts",
+      "default": "./id/index.js"
     },
     "./string": {
-      "types": "./string.d.ts",
-      "default": "./string.js"
+      "types": "./string/index.d.ts",
+      "default": "./string/index.js"
     },
     "./util": {
-      "types": "./util.d.ts",
-      "default": "./util.js"
+      "types": "./util/index.d.ts",
+      "default": "./util/index.js"
     },
     "./images": {
-      "types": "./images.d.ts",
-      "default": "./images.js"
+      "types": "./images/index.d.ts",
+      "default": "./images/index.js"
     },
     "./person": {
-      "types": "./person.d.ts",
-      "default": "./person.js"
+      "types": "./person/index.d.ts",
+      "default": "./person/index.js"
     },
     "./date": {
-      "types": "./date.d.ts",
-      "default": "./date.js"
+      "types": "./date/index.d.ts",
+      "default": "./date/index.js"
     },
     "./internet": {
-      "types": "./internet.d.ts",
-      "default": "./internet.js"
+      "types": "./internet/index.d.ts",
+      "default": "./internet/index.js"
     },
     "./color": {
-      "types": "./color.d.ts",
-      "default": "./color.js"
+      "types": "./color/index.d.ts",
+      "default": "./color/index.js"
     },
     "./game": {
-      "types": "./game.d.ts",
-      "default": "./game.js"
+      "types": "./game/index.d.ts",
+      "default": "./game/index.js"
     }
   },
   "repository": {

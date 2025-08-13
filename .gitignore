@@ -7,30 +7,18 @@ yarn-error.log*
 # Build outputs
 index.js
 index.d.ts
-number.js
-number.d.ts
-boolean.js
-boolean.d.ts
-id.js
-id.d.ts
-string.js
-string.d.ts
-util.js
-util.d.ts
-images.js
-images.d.ts
-location.js
-location.d.ts
-person.js
-person.d.ts
-date.js
-date.d.ts
-internet.js
-internet.d.ts
-color.js
-color.d.ts
-game.js
-game.d.ts
+/number
+/boolean
+/id
+/string
+/util
+/images
+/location
+/person
+/date
+/internet
+/color
+/game
 /core
 
 # IDE
