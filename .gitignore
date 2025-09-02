@@ -5,21 +5,7 @@ yarn-debug.log*
 yarn-error.log*
 
 # Build outputs
-index.js
-index.d.ts
-/number
-/boolean
-/id
-/string
-/util
-/images
-/location
-/person
-/date
-/internet
-/color
-/game
-/core
+dist/
 
 # IDE
 .vscode/

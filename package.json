@@ -1,6 +1,6 @@
 {
   "name": "@mirawision/imagine",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "description": "Deterministic random data generator for mocks, seeds, demos, and tests.",
   "keywords": [
     "faker",
@@ -18,73 +18,103 @@
   "license": "MIT",
   "author": "Yelysei Lukin <yelysei277@gmail.com>",
   "scripts": {
-    "clean": "rimraf index.* number boolean id string util images location person date internet color game core build",
-    "build": "npm run clean && tsc && mv build/index.js index.js && mv build/index.d.ts index.d.ts && mv build/number number && mv build/boolean boolean && mv build/id id && mv build/string string && mv build/util util && mv build/images images && mv build/location location && mv build/person person && mv build/date date && mv build/internet internet && mv build/color color && mv build/game game && mv build/core core && rimraf build",
+    "clean": "rimraf dist",
+    "build": "npm run clean && webpack --config webpack.config.cjs && npm run build:types",
+    "build:types": "tsc --emitDeclarationOnly --outDir dist/types",
     "lint": "eslint \"src/**/*.ts\"",
     "test": "jest --runInBand",
     "prepare": "npm run build",
     "prepublishOnly": "npm run build",
-    "pack": "npm pack",
+    "pack": "npm run build && npm pack",
     "publish": "npm publish --access public"
   },
-  "type": "module",
   "sideEffects": false,
-  "main": "./index.js",
-  "types": "./index.d.ts",
+  "main": "./dist/cjs/index/index.js",
+  "module": "./dist/esm/index/index.js",
+  "types": "./dist/types/index.d.ts",
   "exports": {
     ".": {
-      "types": "./index.d.ts",
-      "default": "./index.js"
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/esm/index/index.js",
+      "require": "./dist/cjs/index/index.js",
+      "default": "./dist/esm/index/index.js"
     },
     "./location": {
-      "types": "./location/index.d.ts",
-      "default": "./location/index.js"
+      "types": "./dist/types/location/index.d.ts",
+      "import": "./dist/esm/location/index.js",
+      "require": "./dist/cjs/location/index.js",
+      "default": "./dist/esm/location/index.js"
     },
     "./number": {
-      "types": "./number/index.d.ts",
-      "default": "./number/index.js"
+      "types": "./dist/types/number/index.d.ts",
+      "import": "./dist/esm/number/index.js",
+      "require": "./dist/cjs/number/index.js",
+      "default": "./dist/esm/number/index.js"
     },
     "./boolean": {
-      "types": "./boolean/index.d.ts",
-      "default": "./boolean/index.js"
+      "types": "./dist/types/boolean/index.d.ts",
+      "import": "./dist/esm/boolean/index.js",
+      "require": "./dist/cjs/boolean/index.js",
+      "default": "./dist/esm/boolean/index.js"
     },
     "./id": {
-      "types": "./id/index.d.ts",
-      "default": "./id/index.js"
+      "types": "./dist/types/id/index.d.ts",
+      "import": "./dist/esm/id/index.js",
+      "require": "./dist/cjs/id/index.js",
+      "default": "./dist/esm/id/index.js"
     },
     "./string": {
-      "types": "./string/index.d.ts",
-      "default": "./string/index.js"
+      "types": "./dist/types/string/index.d.ts",
+      "import": "./dist/esm/string/index.js",
+      "require": "./dist/cjs/string/index.js",
+      "default": "./dist/esm/string/index.js"
     },
     "./util": {
-      "types": "./util/index.d.ts",
-      "default": "./util/index.js"
+      "types": "./dist/types/util/index.d.ts",
+      "import": "./dist/esm/util/index.js",
+      "require": "./dist/cjs/util/index.js",
+      "default": "./dist/esm/util/index.js"
     },
     "./images": {
-      "types": "./images/index.d.ts",
-      "default": "./images/index.js"
+      "types": "./dist/types/images/index.d.ts",
+      "import": "./dist/esm/images/index.js",
+      "require": "./dist/cjs/images/index.js",
+      "default": "./dist/esm/images/index.js"
     },
     "./person": {
-      "types": "./person/index.d.ts",
-      "default": "./person/index.js"
+      "types": "./dist/types/person/index.d.ts",
+      "import": "./dist/esm/person/index.js",
+      "require": "./dist/cjs/person/index.js",
+      "default": "./dist/esm/person/index.js"
     },
     "./date": {
-      "types": "./date/index.d.ts",
-      "default": "./date/index.js"
+      "types": "./dist/types/date/index.d.ts",
+      "import": "./dist/esm/date/index.js",
+      "require": "./dist/cjs/date/index.js",
+      "default": "./dist/esm/date/index.js"
     },
     "./internet": {
-      "types": "./internet/index.d.ts",
-      "default": "./internet/index.js"
+      "types": "./dist/types/internet/index.d.ts",
+      "import": "./dist/esm/internet/index.js",
+      "require": "./dist/cjs/internet/index.js",
+      "default": "./dist/esm/internet/index.js"
     },
     "./color": {
-      "types": "./color/index.d.ts",
-      "default": "./color/index.js"
+      "types": "./dist/types/color/index.d.ts",
+      "import": "./dist/esm/color/index.js",
+      "require": "./dist/cjs/color/index.js",
+      "default": "./dist/esm/color/index.js"
     },
     "./game": {
-      "types": "./game/index.d.ts",
-      "default": "./game/index.js"
+      "types": "./dist/types/game/index.d.ts",
+      "import": "./dist/esm/game/index.js",
+      "require": "./dist/cjs/game/index.js",
+      "default": "./dist/esm/game/index.js"
     }
   },
+  "files": [
+    "dist"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/MiraWision/imagine"
@@ -102,7 +132,10 @@
     "prettier": "3.3.1",
     "rimraf": "5.0.5",
     "ts-jest": "29.1.2",
-    "typescript": "5.4.5"
+    "typescript": "5.4.5",
+    "ts-loader": "9.5.1",
+    "webpack": "5.92.1",
+    "webpack-cli": "5.1.4"
   },
   "peerDependencies": {
     "@mirawision/infopedia": ">=1.0.0"
