@@ -1,6 +1,6 @@
 {
   "name": "@mirawision/imagine",
-  "version": "2.0.0",
+  "version": "2.0.2",
   "description": "Deterministic random data generator for mocks, seeds, demos, and tests.",
   "keywords": [
     "faker",

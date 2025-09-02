@@ -48,7 +48,6 @@ const cjsConfigs = Object.entries(entryPoints).map(([name, entry]) => ({
     filename: `${name === 'index' ? 'index' : name}/index.js`,
     path: path.resolve(__dirname, 'dist/cjs'),
     library: {
-      name: name === 'index' ? 'Imagine' : `Imagine_${name.charAt(0).toUpperCase() + name.slice(1)}`,
       type: 'commonjs2',
     },
     globalObject: 'this',
